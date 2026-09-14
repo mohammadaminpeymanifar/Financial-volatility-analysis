@@ -1,222 +1,39 @@
-# Financial Volatility Analysis using ARIMA-GARCH
-
-## Overview
-
-This project explores financial market volatility using a hybrid ARIMA-GARCH framework.
-
-The objective is to analyze and compare the behavior of different financial assets by modeling:
-
-* Expected Returns (Mean Process)
-* Market Volatility (Risk Process)
-
-The project uses real-world financial data obtained from Yahoo Finance and applies financial econometrics techniques to estimate future returns and conditional volatility.
-
-
----
-
-## Assets Analyzed
-
-The project focuses on real market data including:
-
-* Bitcoin (BTC-USD)
-* Gold Futures (GC=F)
-* S&P 500 Index (^GSPC)
-
-Additional assets can easily be added through Yahoo Finance.
-
----
-
-## Methodology
-
-### 1. Data Collection
-
-Historical price data is collected using:
-
-* Yahoo Finance
-* yfinance Python Package
-
-### 2. Log Return Calculation
-
-Price series are transformed into logarithmic returns to create more suitable financial time series for statistical modeling.
-
-### 3. Stationarity Testing
-
-Stationarity is evaluated using:
-
-* Augmented Dickey-Fuller (ADF) Test
-
-### 4. Autocorrelation Analysis
-
-Dependency structures are examined using:
-
-* ACF (Autocorrelation Function)
-* PACF (Partial Autocorrelation Function)
-
-### 5. ARIMA Modeling
-
-ARIMA is used to model the expected return process.
-
-Outputs:
-
-* Trend behavior
-* Mean return forecast
-* Residual extraction
-
-### 6. GARCH Modeling
-
-GARCH(1,1) is applied to ARIMA residuals to estimate time-varying volatility.
-
-Outputs:
-
-* Conditional volatility
-* Volatility clustering
-* Risk forecast
-
-### 7. Forecasting
-
-The final model provides:
-
-* Next-period expected return
-* Next-period expected volatility
-
----
-
-## Technologies
-
-* Python
-* NumPy
-* Pandas
-* Matplotlib
-* Statsmodels
-* ARCH
-* Jupyter Notebook
-* Yahoo Finance API
-
----
-
-## Financial Concepts
-
-### Stationarity
-
-A stationary time series has statistical properties that remain stable over time.
-
-### Log Returns
-
-A standard measure of financial asset performance used in quantitative finance.
-
-### ADF Test
-
-A statistical test used to determine whether a time series is stationary.
-
-### ARIMA
-
-A classical forecasting model designed to capture linear relationships in time series data.
-
-### GARCH
-
-A volatility modeling framework widely used in financial risk management.
-
-### Volatility Clustering
-
-A phenomenon where periods of high volatility tend to be followed by high volatility, and periods of low volatility tend to follow low volatility.
-
----
-
-## Potential Applications
-
-* Financial Risk Analysis
-* Investment Research
-* Quantitative Finance
-* Portfolio Monitoring
-* Volatility Forecasting
-* Financial Data Science
-
----
-
-## Future Improvements
-
-Planned future enhancements:
-
-* Multi-asset volatility comparison
-* Model selection using AIC/BIC
-* VaR (Value at Risk) estimation
-* EGARCH and GJR-GARCH models
-* Forecast evaluation metrics
-* Interactive dashboards with Power BI
-
----
-
-# تحلیل نوسانات دارایی‌های مالی با ARIMA-GARCH
-
-## معرفی پروژه
-
-این پروژه با هدف تحلیل و پیش‌بینی رفتار دارایی‌های مالی با استفاده از مدل ترکیبی ARIMA-GARCH توسعه یافته است.
-
-در این پروژه از داده‌های واقعی بازارهای مالی استفاده شده و تلاش شده است بازدهی و ریسک دارایی‌ها به صورت همزمان مدل‌سازی شوند.
-
----
-
-## انگیزه پروژه
-
-رشته تحصیلی من اقتصاد است و در دوران دانشگاه با مباحث آمار، اقتصادسنجی و تحلیل سری‌های زمانی آشنا شدم.
-
-اگرچه تجربه کاری فعلی من بیشتر در حوزه تحلیل داده و گزارش‌گیری سازمانی متمرکز است، اما در حال توسعه پروژه‌هایی هستم که دانش اقتصاد، اقتصادسنجی و تحلیل داده را با یکدیگر ترکیب می‌کنند.
-
-این پروژه بخشی از مسیر یادگیری و حرکت من به سمت حوزه‌های زیر محسوب می‌شود:
-
-* Financial Data Analytics
-* Financial Data Science
-* Quantitative Analysis
-
----
-
-## دارایی‌های مورد بررسی
-
-* بیت‌کوین
-* طلا
-* شاخص S&P 500
-
----
-
-## مراحل انجام پروژه
-
-1. دریافت داده‌های واقعی بازار
-2. محاسبه بازدهی لگاریتمی
-3. بررسی مانایی با آزمون ADF
-4. تحلیل ACF و PACF
-5. مدل‌سازی بازدهی با ARIMA
-6. مدل‌سازی نوسانات با GARCH
-7. پیش‌بینی بازدهی و ریسک
-
----
-
-## مهارت‌های مورد استفاده
-
-* Python
-* تحلیل داده
-* اقتصادسنجی
-* سری‌های زمانی
-* مدل ARIMA
-* مدل GARCH
-* تحلیل ریسک مالی
-
----
-
-## کاربردهای پروژه
-
-* مدیریت ریسک
-* تحلیل بازار سرمایه
-* تحلیل داده‌های مالی
-* پیش‌بینی نوسانات بازار
-* تحقیقات سرمایه‌گذاری
-* علم داده مالی
-
----
-
-## توسعه‌های آینده
-
-* مقایسه چندین دارایی مالی
-* محاسبه Value at Risk (VaR)
-* مدل‌های EGARCH و GJR-GARCH
-* داشبوردهای تحلیلی با Power BI
-* تحلیل عملکرد مدل‌ها
+=============================Bitcoin Volatility Analysis Using ARIMA-GARCH=====================================
+This project analyzes Bitcoin (BTC-USD) historical data using financial time series and econometric techniques.
+
+The analysis combines:
+ * ARIMA (AutoRegressive Integrated Moving Average)
+ * GARCH (Generalized AutoRegressive Conditional Heteroskedasticity)
+ to model return dynamics and volatility behavior in financial markets.
+
+The project demonstrates a complete workflow including:
+ * Data collection from Yahoo Finance
+ * Log return calculation
+ * Stationarity testing (ADF)
+ * ACF & PACF analysis
+ * ARIMA modeling
+ * GARCH volatility modeling
+ * Forecasting future return and volatility
+
+Detailed Analysis
+ A complete statistical and financial interpretation of the results is available in:
+ **reports/analysis_report.md**
+
+=========================================================================================================================================
+این پروژه با هدف تحلیل رفتار بازدهی و نوسانات بیت‌کوین با استفاده از روش‌های اقتصادسنجی مالی و تحلیل سری‌های زمانی توسعه یافته است.
+
+در این پروژه از مدل‌های 
+ ARIMA و GARCH 
+ برای تحلیل بازدهی و ریسک بازار استفاده شده است
+
+مراحل اصلی پروژه شامل:
+ * دریافت داده‌های واقعی بازار
+ * محاسبه بازدهی لگاریتمی
+ * آزمون مانایی (ADF)
+ * تحلیل ACF و PACF
+ * مدل‌سازی بازدهی با ARIMA
+ * مدل‌سازی نوسانات با GARCH
+ * پیش‌بینی بازدهی و ریسک
+
+برای مشاهده تحلیل کامل نتایج به فایل زیر مراجعه کنید:
+ **reports/analysis_report.md**
